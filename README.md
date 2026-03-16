@@ -29,7 +29,7 @@
 위와 같은 클라우드 종속성(Cloud Dependency) 문제를 극복하기 위해, 데이터를 파견하지 않고(Zero-data transfer) 기기 내에서 직접 추론 연산(Inference)을 수행하는 Local LLM 기술이 급속도로 발전하였다.
 
 초기에는 수십억 개의 파라미터(Weight)를 일반적인 소비자용 램(RAM)과 GPU(VRAM)에 통으로 적재하는 것이 불가능에 가까웠으나, 데이터의 정밀도를 낮추어 용량을 획기적으로 압축하는 **양자화(Quantization, 예: 16-bit, 8-bit, 4-bit)** 기술의 보편화(예: GGML, GGUF 포맷)가 판도를 바꾸었다. 이를 통해 Llama(Meta), Mistral 등 고성능 오픈소스 오픈웨이트(Open-weights) 모델들이 평범한 랩톱이나 스마트폰 환경에서도 구동될 수 있게 되었다.
-나아가 *Llama.cpp*, *Ollama*와 같은 오픈소스 추론 프레임워크는 명령어 몇 줄만으로 로컬 런타임 환경을 구축할 수 있도록 진입 장벽을 낮추었으며, Apple Intelligence나 AI PC 등 하드웨어 제조사들의 사활을 건 에지(Edge) NPU 탑재는 온디바이스(On-device) AI 시대를 2026년 현재 주류 컴퓨팅 패러다임으로 안착시켰다.
+나아가 *Llama.cpp*, *Ollama*와 같은 오픈소스 추론 프레임워크는 명령어 몇 줄만으로 로컬 런타임 환경을 구축할 수 있도록 진입 장벽을 낮추었으며, Apple Intelligence나 AI PC 등 하드웨어 제조사들의 사활을 건 엣지(Edge) NPU 탑재는 온디바이스(On-device) AI 시대를 2026년 현재 주류 컴퓨팅 패러다임으로 안착시켰다.
 
 ### 2.3 프라이버시와 보안 위협 모델의 패러다임 전환
 Local LLM 생태계는 앞서 서술한 "클라우드 제공자로 인한 데이터 유출(Third-party Risk)"을 제거함으로써, 시스템 권한을 100% 소유자에게 귀속시키는 **데이터 주권(Data Sovereignty)**을 달성한다. 프롬프트는 인터넷을 타지 않고 CPU/GPU 내에서 텐서 연산으로 치환된 뒤 그 결과값만 화면에 출력된다.
